@@ -1,0 +1,100 @@
+
+
+Submitted Code
+Language: Java 7
+
+ Open in editor
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.text.*;
+4
+import java.math.*;
+5
+import java.util.regex.*;
+6
+​
+7
+public class Solution {
+8
+​
+9
+    static int solve(int[] a){
+10
+        // Complete this function
+11
+       int half = a.length / 2;
+12
+        int sumR =0;
+13
+        int sumL = 0;
+14
+        int sumT = 0;
+15
+        int num = 0;
+16
+        
+17
+        for(int i =0; i< a.length;i++){
+18
+            sumT += a[i];
+19
+        }
+20
+        
+21
+        for(int i =half; i< a.length; i++){
+22
+            sumR += a[i];
+23
+        }
+24
+        
+25
+          sumL = sumT - sumR;
+26
+        
+27
+        if(sumR == sumL)
+28
+            num =0;
+29
+        if(sumR > sumL)
+30
+            num = sumR -sumL;
+31
+        if(sumL > sumR)
+32
+            num = sumL - sumR;
+33
+        
+34
+        return num;   
+35
+    }
+36
+​
+37
+    public static void main(String[] args) {
+38
+        Scanner in = new Scanner(System.in);
+39
+        int n = in.nextInt();
+40
+        int[] a = new int[n];
+41
+        for(int a_i=0; a_i < n; a_i++){
+42
+            a[a_i] = in.nextInt();
+43
+        }
+44
+        int result = solve(a);
+45
+        System.out.println(result);
+46
+    }
+47
+}
